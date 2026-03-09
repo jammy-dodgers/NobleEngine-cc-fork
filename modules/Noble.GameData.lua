@@ -165,13 +165,13 @@ end
 -- @see save
 function Noble.GameData.set(__dataItemName, __value, __gameDataSlot, __saveToDisk, __updateTimestamp)
 	currentSlot = __gameDataSlot or currentSlot
-	if (exists(currentSlot, __dataItemName)) then
+	--if (exists(currentSlot, __dataItemName)) then
 		gameDatas[currentSlot].data[__dataItemName] = __value
 		local setTimestamp = Utilities.handleOptionalBoolean(__updateTimestamp, true)
 		if (setTimestamp) then updateTimestamp(gameDatas[currentSlot]) end
 		local saveToDisk = Utilities.handleOptionalBoolean(__saveToDisk, true)
 		if (saveToDisk) then Noble.GameData.save() end
-	end
+	--end
 end
 
 --- Reset a GameData item to its default value, defined in @{setup|setup}.
