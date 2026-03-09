@@ -42,7 +42,6 @@ local function exists(__gameDataSlot, __key)
 		return true
 	end
 
-	error("BONK: Game Datum \"" .. __key .. "\" does not exist. Maybe you spellet it wronlgly.", 3)
 	return false
 end
 
@@ -152,6 +151,7 @@ function Noble.GameData.get(__dataItemName, __gameDataSlot)
 	if (exists(currentSlot, __dataItemName)) then
 		return gameDatas[currentSlot].data[__dataItemName]
 	end
+	return nil
 end
 
 --- Set the value of a GameData item.
