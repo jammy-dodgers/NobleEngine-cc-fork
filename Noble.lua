@@ -361,6 +361,11 @@ function playdate.update()
 	if (Noble.showFPS) then
 		playdate.drawFPS(4, 4)
 	end
+	
+	Graphics.pushContext()
+	Graphics.setDrawOffset(0,0)
+	achievements.toasts.manualUpdate()
+	Graphics.popContext()
 
 	Timer.updateTimers()		-- Finally, update all SDK timers.
 	FrameTimer.updateTimers() 	-- Update all frame timers
